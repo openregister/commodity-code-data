@@ -1,0 +1,109 @@
+{
+  "goods_nomenclature_item_id": "0101000000",
+  "description": "Live horses, asses, mules and hinnies",
+  "bti_url":
+    "http://ec.europa.eu/taxation_customs/dds2/ebti/ebti_consultation.jsp?Lang=en&nomenc=0101000000&Expand=true",
+  "formatted_description": "Live horses, asses, mules and hinnies",
+  "footnotes": [
+    {
+      "code": "TN701",
+      "description":
+        "According to  the Council Regulation (EU) No 692/2014 (OJ L183, p. 9) it shall be prohibited to import into European Union goods originating in Crimea or Sevastopol.\nThe prohibition shall not apply in respect of: \n(a) the execution until 26 September 2014, of trade contracts concluded before 25 June 2014, or of ancillary contracts necessary for the execution of such contracts, provided that the natural or legal persons, entity or body seeking to perform the contract have notified, at least 10 working days in advance, the activity or transaction to the competent authority of the Member State in which they are established. \n(b) goods originating in Crimea or Sevastopol which have been made available to the Ukrainian authorities for examination, for which compliance with the conditions conferring entitlement to preferential origin has been verified and for which a certificate of origin has been issued in accordance with Regulation (EU) No 978/2012 and Regulation (EU) No 374/2014 or in accordance with the EU-Ukraine Association Agreement.",
+      "formatted_description":
+        "According to  the Council Regulation (EU) No 692/2014 (OJ L183, p. 9) it shall be prohibited to import into European Union goods originating in Crimea or Sevastopol.<br/>The prohibition shall not apply in respect of: <br/>(a) the execution until 26 September 2014, of trade contracts concluded before 25 June 2014, or of ancillary contracts necessary for the execution of such contracts, provided that the natural or legal persons, entity or body seeking to perform the contract have notified, at least 10 working days in advance, the activity or transaction to the competent authority of the Member State in which they are established. <br/>(b) goods originating in Crimea or Sevastopol which have been made available to the Ukrainian authorities for examination, for which compliance with the conditions conferring entitlement to preferential origin has been verified and for which a certificate of origin has been issued in accordance with Regulation (EU) No 978/2012 and Regulation (EU) No 374/2014 or in accordance with the EU-Ukraine Association Agreement."
+    }
+  ],
+  "chapter": {
+    "goods_nomenclature_item_id": "0100000000",
+    "description": "LIVE ANIMALS",
+    "formatted_description": "Live animals",
+    "chapter_note":
+      "* 1\\. This chapter covers all live animals except:\r\n  * (a) fish and crustaceans, molluscs and other aquatic invertebrates, of heading 0301, 0306, 0307 or 0308;\r\n  * (b) cultures of micro-organisms and other products of heading 3002; and\r\n  * (c) animals of heading 9508."
+  },
+  "section": {
+    "title": "Live animals; animal products",
+    "numeral": "I",
+    "position": 1,
+    "section_note":
+      "* 1\\. Any reference in this section to a particular genus or species of an animal, except where the context otherwise requires, includes a reference to the young of that genus or species.\r\n* 2\\. Except where the context otherwise requires, throughout the nomenclature any reference to 'dried' products also covers products which have been dehydrated, evaporated or freeze-dried.\r\n"
+  },
+  "commodities": [
+    {
+      "description": "Horses",
+      "number_indents": 1,
+      "goods_nomenclature_item_id": "0101210000",
+      "leaf": false,
+      "goods_nomenclature_sid": 93797,
+      "formatted_description": "Horses",
+      "description_plain": "Horses",
+      "parent_sid": null
+    },
+    {
+      "description": "Pure-bred breeding animals",
+      "number_indents": 2,
+      "goods_nomenclature_item_id": "0101210000",
+      "leaf": true,
+      "goods_nomenclature_sid": 93796,
+      "formatted_description": "Pure-bred breeding animals",
+      "description_plain": "Pure-bred breeding animals",
+      "parent_sid": 93797
+    },
+    {
+      "description": "Other",
+      "number_indents": 2,
+      "goods_nomenclature_item_id": "0101290000",
+      "leaf": false,
+      "goods_nomenclature_sid": 93798,
+      "formatted_description": "Other",
+      "description_plain": "Other",
+      "parent_sid": 93797
+    },
+    {
+      "description": "For slaughter",
+      "number_indents": 3,
+      "goods_nomenclature_item_id": "0101291000",
+      "leaf": true,
+      "goods_nomenclature_sid": 93799,
+      "formatted_description": "For slaughter",
+      "description_plain": "For slaughter",
+      "parent_sid": 93798
+    },
+    {
+      "description": "Other",
+      "number_indents": 3,
+      "goods_nomenclature_item_id": "0101299000",
+      "leaf": true,
+      "goods_nomenclature_sid": 93800,
+      "formatted_description": "Other",
+      "description_plain": "Other",
+      "parent_sid": 93798
+    },
+    {
+      "description": "Asses",
+      "number_indents": 1,
+      "goods_nomenclature_item_id": "0101300000",
+      "leaf": true,
+      "goods_nomenclature_sid": 93801,
+      "formatted_description": "Asses",
+      "description_plain": "Asses",
+      "parent_sid": null
+    },
+    {
+      "description": "Other",
+      "number_indents": 1,
+      "goods_nomenclature_item_id": "0101900000",
+      "leaf": true,
+      "goods_nomenclature_sid": 72763,
+      "formatted_description": "Other",
+      "description_plain": "Other",
+      "parent_sid": null
+    }
+  ],
+  "_response_info": {
+    "links": [
+      { "rel": "self", "href": "/trade-tariff/headings/0101.json" },
+      { "rel": "chapter", "href": "/trade-tariff/chapters/01" },
+      { "rel": "section", "href": "/trade-tariff/sections/1" }
+    ]
+  }
+}

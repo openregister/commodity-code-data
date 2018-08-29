@@ -1,5 +1,5 @@
 # commodity-code-data
-Data for registers for commodity codes
+Data for the commodity-code register, which is a list of commodity-codes representing specified commodities or products for international trade.
 
 ## Licence
 
@@ -10,3 +10,5 @@ copyright](http://www.nationalarchives.gov.uk/information-management/re-using-pu
 and available under the terms of the [Open Government
 3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)
 licence.
+
+# *test*

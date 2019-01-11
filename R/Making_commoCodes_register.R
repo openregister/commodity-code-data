@@ -9,42 +9,53 @@ file_nomenclature <- read_csv2("../list/nomenclature.csv", col_types = "cccccccc
 ### Data Frames To Work With: ----
 df_data <- file_nomenclature
 
-### Cutting a Regsiter: ----
-## make a text column to prep for curie field.
-df_data$text_product_line <- "product_line"
+## adding an 'index' column as the index field:
+df_data$index <- seq.int(nrow(df_data))
 
-## make a 'unique_identifier' field, by conatenating 'goods_nomenclature_item_id' and 'productline_suffix'
-df_data<- mutate(df_data, commodity_code = str_c(df_data$goods_nomenclature_item_id,df_data$productline_suffix))
+# columns i will be keeping in df_data:
+# "goods_nomenclature_item_id", "producline_suffix", "validity_start_date", "validity_end_date", "description", "number_indents", "index"
 
-## make 'name' (description field) column
-df_data$name <- df_data$description
+# columns in this sequence:
+column_order <- c("index", "description", "goods_nomenclature_item_id", "producline_suffix", "number_indents","validity_start_date", "validity_end_date")
 
-## make the date columns (change/start/end)
-df_data$change_date <- NA
-df_data$start_date <- df_data$validity_start_date
-df_data$end_date <- df_data$validity_end_date
+## reorder columns in df_data using column_order:
+df_data <- df_data[ ,column_order]
 
-## make 'parent' column
-df_data$parent <- NA
+## adding 'change-date' column:
+df_data$`change-date` <- NA
 
-## Rearrange columns for use in excel:
-# This means rearranging columns by goods_nomenclature_item_id1,productline_suffix1.
-# first make a copy of df_data
-copy_of_df_data <- df_data
-# now rearrange data
-df_data <- df_data %>% arrange(goods_nomenclature_item_id, producline_suffix)
+## analysis: any variation in timestamp
+# split the timecompont from start_date:
+df_data <- df_data %>% mutate(time = str_sub(df_data$validity_start_date, 12))
+table(df_data$time) # 00:00:00 = 24418 -- proof that their is no variation in timestamps
 
-## Re-order Columns
-df_data <- df_data %>% select(
-  commodity_code,
-  name,
-  goods_nomenclature_item_id,
-  producline_suffix,
-  parent,
-  start_date,
-  end_date,
-  change_date
-)
+# remove timestamps from 'validity_start_date'
+df_data <- df_data %>% mutate(start_date = str_sub(df_data$validity_start_date, 0, 10))
 
-### Export Registers: ----
-write_tsv(df_data, path = "../data/commodity_code_data.tsv", na = "")
+## convert 'index' to 'char' field
+df_data$index <- as.character(df_data$index)
+
+## convert 'chnage-date' to 'char' field
+df_data$`change-date` <- as.character(df_data$`change-date`)
+
+## rename columns
+df_data <- rename(df_data, `commodity-code` = index)
+df_data <- rename(df_data, name = description)
+df_data <- rename(df_data, `goods-nomenclature-item-id` = goods_nomenclature_item_id)
+df_data <- rename(df_data, `productline-suffix` = producline_suffix)
+df_data <- rename(df_data, `number-indents` = number_indents)
+df_data <- rename(df_data, `end-date` = validity_end_date)
+df_data <- rename(df_data, `start-date` = start_date)
+
+## re-order columns
+df_data <- df_data %>% select(`commodity-code`, 
+                              name, 
+                              `goods-nomenclature-item-id`,
+                              `productline-suffix`,
+                              `number-indents`,
+                              `start-date`,
+                              `end-date`,
+                              `change-date`)
+
+## export
+write_tsv(df_data, path = "../data/commodity-code.tsv", na = "")
